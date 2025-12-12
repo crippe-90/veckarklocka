@@ -1,4 +1,4 @@
-# veckarklocka
+# veckarklocka [WORK IN PROGRESS]
 This app sends reminders to selected people on a selected day of the month.
 
 
@@ -47,3 +47,14 @@ OnCalendar=*-*-* 18:00:00   # daily at 18:00
 [Install]
 WantedBy=timers.target
 ```
+
+### Step 3) Enable the script & check how it is going
+Run these commands
+
+` sudo systemctl daemon-reload`
+and
+` sudo systemctl enable --now veckarklocka.timer`
+
+Then check the logs
+
+`journalctl -u myscript.service -f`
