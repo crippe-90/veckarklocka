@@ -1,0 +1,15 @@
+[appsettings]
+DAY="SATURDAY"
+NTH=2
+
+[credentials]
+HOST=""
+PORT=587
+SECURITY="STARTTLS"
+USER=""
+PASSWORD="" 
+SEND_FROM=""
+
+[emailsettings]
+SEND_TO=[
+]

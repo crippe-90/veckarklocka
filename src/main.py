@@ -2,7 +2,7 @@ import tomllib
 import sys
 
 from datechecker import is_nth_weekday_now
-from constants import WEEKDAYS
+from constants import WEEKDAYS, load_constants_from_config
 from send_email import send_emails
 
 if __name__=="__main__":
@@ -17,7 +17,8 @@ if __name__=="__main__":
         config = tomllib.load(f)
         day = config["appsettings"]["DAY"]
         nth = config["appsettings"]["NTH"]
+        load_constants_from_config(config)
         weekday = WEEKDAYS[day]
         
         if is_nth_weekday_now(nth,weekday):
-            send_emails(f"Today is the {nth} {day} of the month!")
+            send_emails(message=f"Today is the {nth} {day} of the month!", email_addresses=config["emailsettings"]["SEND_TO"])
