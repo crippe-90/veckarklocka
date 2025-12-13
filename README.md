@@ -4,11 +4,42 @@ This app sends reminders to selected people on a selected day of the month.
 
 ## Configuration
 The day is selected in config.toml.
-Two variables is necessary to use in the config file, and one header
+
+### App settings
+Two variables is necessary to use in the config file under the header `appsettings`.
+`DAY` is the weekday the program should run on, in english and capital.
+`NTH` is the nth time this weekday occur in this month. For example december 13 2025 will be DAY=SATURDAY and NTH=2.
+
+
+### Credentials
+This may change if I find a better way to store these values in the future.
+What is need to added here is `HOST`, that is the SMTP you have selected.
+`PORT` is the port number that the host uses.
+`SECURITY` seems to be set to STARTTLS in most scenarios, but may be something else.
+`USER` and `PASSWORD` is your username and password at the SMTP host.
+`SEND_FROM` is the address from where the email should be sent.
+
+
+### Email settings
+`SEND_TO` is a list where you put the email adresses you wish to send your message to.
+
+
 ```
 [appsettings]
-DAY="FRIDAY"
+DAY="SATURDAY"
 NTH=2
+
+[credentials]
+HOST=""
+PORT=587
+SECURITY="STARTTLS"
+USER=""
+PASSWORD="" 
+SEND_FROM=""
+
+[emailsettings]
+SEND_TO=[
+]
 ```
 `DAY` is the weekday the program should run on, in english and capital.
 `NTH` is the nth time this weekday occur in this month. For example december 13 2025 will be DAY=SATURDAY and NTH=2   
