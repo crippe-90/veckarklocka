@@ -57,4 +57,4 @@ and
 
 Then check the logs
 
-`journalctl -u myscript.service -f`
+`journalctl -u veckarklocka.service -f`
