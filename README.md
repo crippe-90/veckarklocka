@@ -11,7 +11,7 @@ DAY="FRIDAY"
 NTH=2
 ```
 `DAY` is the weekday the program should run on, in english and capital.
-`NTH` is the number of times this weekday should occur previously in this month. For example december 13 2025 will be DAY=SATUERDAY and NTH=2   
+`NTH` is the nth time this weekday occur in this month. For example december 13 2025 will be DAY=SATURDAY and NTH=2   
 
 ## Usage
 The main idea is to use it with systemd timers
