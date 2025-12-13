@@ -1,17 +1,17 @@
-# veckarklocka [WORK IN PROGRESS]
+# veckarklocka [TESTED ON DEBIAN 13]
 This app sends reminders to selected people on a selected day of the month.
 
 
 ## Configuration
 The day is selected in config.toml.
-Two variables is necessary to use in the config file
-
-
+Two variables is necessary to use in the config file, and one header
 ```
 [appsettings]
 DAY="FRIDAY"
 NTH=2
 ```
+`DAY` is the weekday the program should run on, in english and capital.
+`NTH` is the number of times this weekday should occur previously in this month. For example december 13 2025 will be DAY=SATUERDAY and NTH=2   
 
 ## Usage
 The main idea is to use it with systemd timers
@@ -26,7 +26,7 @@ Description=Run veckarklocka for reminding people...
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/python3 <ABSOLUTE PATH>/veckarklocka/src/main.py
+ExecStart=/usr/bin/python3 <ABSOLUTE PATH>/veckarklocka/src/main.py config=<ABSOLUTE PATH>/veckarklocka/src/config.toml
 ```
 
 ### Step 2) Create a systemd timer
