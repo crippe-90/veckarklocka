@@ -208,3 +208,4 @@ __marimo__/
 
 # From project
 src/config.toml
+src/test.py

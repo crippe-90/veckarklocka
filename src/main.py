@@ -5,7 +5,9 @@ from datechecker import is_nth_weekday_now
 from constants import WEEKDAYS, load_constants_from_config
 from send_email import send_emails
 
-if __name__=="__main__":
+
+def run_app():
+    print("Starting application...")
     config_path = "config.toml"
     if len(sys.argv) > 1 and sys.argv[1] and sys.argv[1].startswith("config="):
         arg = sys.argv[1]
@@ -24,3 +26,8 @@ if __name__=="__main__":
         
         if is_nth_weekday_now(nth,weekday):
             send_emails()
+        else:
+            print(f"Today is not the {nth} {day} of the month. No emails sent.")
+
+if __name__=="__main__":
+    run_app()
