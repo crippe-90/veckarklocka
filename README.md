@@ -1,7 +1,12 @@
-# veckarklocka [TESTED ON DEBIAN 13]
+# veckarklocka [WORK IN PROGRESS]
 This app sends reminders to selected people on a selected day of the month.
 Currently, it supports email notifications through SMTP.
 
+
+## Interested in trying it out?
+This app was tested with https://ethereal.email/, which is a great tool for testing emails.
+Clone this repo and give it a go.
+Python 3.11.2 was used to develop this tool, but I suppose it should work with most Python 3 versions.
 
 ## Configuration
 The nt'h weekday of a month is selected in config.toml.
