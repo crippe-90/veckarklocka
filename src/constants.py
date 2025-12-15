@@ -17,15 +17,23 @@ EMAIL_CREDENTIALS = {
     "PASSWORD": ""
 }
 
+EMAIL= {}
+
 EMAIL_ADRESSES = []
+
 
 def load_constants_from_config(config):
     global EMAIL_CREDENTIALS
     global EMAIL_ADRESSES
+    global EMAIL
 
     EMAIL_CREDENTIALS["HOST"] = config["credentials"]["HOST"]
     EMAIL_CREDENTIALS["PORT"] = config["credentials"]["PORT"]
     EMAIL_CREDENTIALS["USER"] = config["credentials"]["USER"]
     EMAIL_CREDENTIALS["PASSWORD"] = config["credentials"]["PASSWORD"]
+    EMAIL_CREDENTIALS["PASSWORD_ENV_NAME"] = config["credentials"]["PASSWORD_ENV_NAME"]
 
     EMAIL_ADRESSES.extend(config["emailsettings"]["SEND_TO"])
+
+    EMAIL["MESSAGE"]=config["emailsettings"]["MESSAGE"]
+    EMAIL["SUBJECT"]=config["emailsettings"]["SUBJECT"]

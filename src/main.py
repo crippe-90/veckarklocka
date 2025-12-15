@@ -11,7 +11,9 @@ if __name__=="__main__":
         arg = sys.argv[1]
         config_path = arg.split('=')[1]
     else:
-        print("No config path provided, using default 'config.toml'")
+        print("No config path provided, please provide it.")
+        print("Usage: python main.py config=absolutepath/to/config.toml")
+        exit()
     
     with open(config_path, "rb") as f:
         config = tomllib.load(f)
@@ -21,4 +23,4 @@ if __name__=="__main__":
         weekday = WEEKDAYS[day]
         
         if is_nth_weekday_now(nth,weekday):
-            send_emails(message=f"Today is the {nth} {day} of the month!", email_addresses=config["emailsettings"]["SEND_TO"])
+            send_emails()
