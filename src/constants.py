@@ -28,4 +28,4 @@ def load_constants_from_config(config):
     EMAIL_CREDENTIALS["USER"] = config["credentials"]["USER"]
     EMAIL_CREDENTIALS["PASSWORD"] = config["credentials"]["PASSWORD"]
 
-    EMAIL_ADRESSES.append(config["emailsettings"]["SEND_TO"])
+    EMAIL_ADRESSES.extend(config["emailsettings"]["SEND_TO"])
