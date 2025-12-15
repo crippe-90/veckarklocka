@@ -14,7 +14,7 @@ EMAIL_CREDENTIALS = {
     "HOST": "",
     "PORT": 587,
     "USER": "",
-    "PASSWORD": ""
+    "PASSWORD_ENV_NAME": ""
 }
 
 EMAIL= {}
@@ -30,7 +30,7 @@ def load_constants_from_config(config):
     EMAIL_CREDENTIALS["HOST"] = config["credentials"]["HOST"]
     EMAIL_CREDENTIALS["PORT"] = config["credentials"]["PORT"]
     EMAIL_CREDENTIALS["USER"] = config["credentials"]["USER"]
-    EMAIL_CREDENTIALS["PASSWORD"] = config["credentials"]["PASSWORD"]
+    #EMAIL_CREDENTIALS["PASSWORD"] = config["credentials"]["PASSWORD"]
     EMAIL_CREDENTIALS["PASSWORD_ENV_NAME"] = config["credentials"]["PASSWORD_ENV_NAME"]
 
     EMAIL_ADRESSES.extend(config["emailsettings"]["SEND_TO"])
